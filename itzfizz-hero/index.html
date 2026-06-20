@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ItzFizz — Quick commerce, decoded</title>
+<meta name="description" content="ItzFizz hero section — a scroll-driven car animation built with vanilla HTML, CSS, JavaScript and GSAP.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="topbar">
+  <div class="topbar__mark">ITZ<span>FIZZ</span></div>
+  <div class="topbar__tag">QUICK COMMERCE // BUILT FOR SPEED</div>
+</header>
+
+<main>
+  <section class="hero" id="hero">
+
+    <div class="hero__inner">
+
+      <p class="hero__eyebrow" data-anim="eyebrow">Pickup, reinvented</p>
+
+      <h1 class="hero__headline" id="headline" aria-label="Welcome ItzFizz">
+        <!-- letters injected by JS for per-letter stagger -->
+      </h1>
+
+      <p class="hero__sub" data-anim="sub">The pickup-point network that turned a delivery problem into a two-minute walk.</p>
+
+      <div class="stage" id="stage">
+        <div class="stage__rail" id="rail">
+          <div class="stage__rail-fill" id="railFill"></div>
+        </div>
+
+        <div class="speedlines" id="speedlines" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+
+        <div class="car" id="car" aria-hidden="true">
+          <svg viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#272b33"/>
+                <stop offset="100%" stop-color="#15171c"/>
+              </linearGradient>
+            </defs>
+
+            <!-- chassis -->
+            <path class="car__chassis" d="M60 200
+              L60 182 Q60 167 80 162
+              L160 150 Q205 130 262 128
+              L620 128 Q678 130 722 150
+              L800 165 Q822 170 825 186
+              L825 200 Q825 215 805 215
+              L700 215 L220 215 L90 215
+              Q60 215 60 200 Z" fill="url(#bodyGrad)" stroke="#3a3f49" stroke-width="2"/>
+
+            <!-- racing stripe -->
+            <path class="car__stripe" d="M270 134 L612 134 L600 150 L282 150 Z" fill="#C8FA3C"/>
+
+            <!-- cabin -->
+            <path class="car__cabin" d="M262 128 Q282 68 344 58 L540 58 Q600 68 620 128 Z" fill="url(#bodyGrad)" stroke="#3a3f49" stroke-width="2"/>
+
+            <!-- windshield -->
+            <path class="car__glass" d="M282 120 Q298 82 348 76 L534 76 Q584 82 600 120 Q584 110 534 108 L348 108 Q298 110 282 120 Z" fill="#6fd8ff" opacity="0.55"/>
+
+            <!-- door seam -->
+            <line x1="455" y1="128" x2="455" y2="213" stroke="#3a3f49" stroke-width="2"/>
+            <circle cx="430" cy="172" r="3" fill="#C8FA3C"/>
+
+            <!-- headlight / taillight -->
+            <ellipse cx="72" cy="188" rx="9" ry="14" fill="#C8FA3C"/>
+            <rect x="812" y="178" width="10" height="20" rx="3" fill="#FF5F4D"/>
+
+            <!-- mirror -->
+            <path d="M338 80 L322 64 L334 60 L350 76 Z" fill="#15171c"/>
+
+            <!-- rear wheel -->
+            <g class="car__wheel car__wheel--rear" style="transform-origin: 700px 215px;">
+              <circle cx="700" cy="215" r="42" fill="#0c0d10" stroke="#34373f" stroke-width="3"/>
+              <circle cx="700" cy="215" r="17" fill="none" stroke="#C8FA3C" stroke-width="3"/>
+              <line x1="700" y1="198" x2="700" y2="232" stroke="#C8FA3C" stroke-width="3"/>
+              <line x1="683" y1="215" x2="717" y2="215" stroke="#C8FA3C" stroke-width="3"/>
+            </g>
+
+            <!-- front wheel -->
+            <g class="car__wheel car__wheel--front" style="transform-origin: 190px 215px;">
+              <circle cx="190" cy="215" r="42" fill="#0c0d10" stroke="#34373f" stroke-width="3"/>
+              <circle cx="190" cy="215" r="17" fill="none" stroke="#C8FA3C" stroke-width="3"/>
+              <line x1="190" y1="198" x2="190" y2="232" stroke="#C8FA3C" stroke-width="3"/>
+              <line x1="173" y1="215" x2="207" y2="215" stroke="#C8FA3C" stroke-width="3"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <ul class="stats" id="stats">
+        <li class="stat" data-target="58">
+          <span class="stat__num"><span class="stat__digits">0</span>%</span>
+          <span class="stat__label">Increase in pickup-point use</span>
+        </li>
+        <li class="stat" data-target="23">
+          <span class="stat__num"><span class="stat__digits">0</span>%</span>
+          <span class="stat__label">Decrease in customer phone calls</span>
+        </li>
+        <li class="stat" data-target="27">
+          <span class="stat__num"><span class="stat__digits">0</span>%</span>
+          <span class="stat__label">Increase in pickup-point use</span>
+        </li>
+        <li class="stat" data-target="40">
+          <span class="stat__num"><span class="stat__digits">0</span>%</span>
+          <span class="stat__label">Decrease in customer phone calls</span>
+        </li>
+      </ul>
+
+    </div>
+
+    <button class="scrollcue" id="scrollcue" aria-label="Scroll down">
+      <span>SCROLL</span>
+      <svg width="14" height="22" viewBox="0 0 14 22"><path d="M7 1V21M7 21L1 15M7 21L13 15" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </section>
+
+  <section class="next">
+    <div class="next__inner">
+      <h2>Built for the last 400 metres.</h2>
+      <p>Every ItzFizz pickup point sits inside a two-minute walk, so drivers stop circling blocks and riders stop waiting on hold. That's the whole pitch.</p>
+      <a class="next__cta" href="#hero">Back to top ↑</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <span>ItzFizz © 2026</span>
+  <span>Built with HTML, CSS, JS &amp; GSAP</span>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
